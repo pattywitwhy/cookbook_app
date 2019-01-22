@@ -35,11 +35,10 @@ class Api::RecepiesController < ApplicationController
     render 'show.json.jbuilder'
   end
 
-  def destory
+  def destroy
     recipe = Recipe.find(params[:id])
-    recipe.destory
+    recipe.destroy
 
     render json: {message: "Successfully removed recipe."}
   end
-
 end
