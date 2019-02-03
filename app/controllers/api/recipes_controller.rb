@@ -1,4 +1,4 @@
-class Api::RecepiesController < ApplicationController
+class Api::RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
 
@@ -24,6 +24,8 @@ class Api::RecepiesController < ApplicationController
   end
 
   def show
+    @current_user = current_user
+
     @recipe = Recipe.find(params[:id])
     render 'show.json.jbuilder'
   end
